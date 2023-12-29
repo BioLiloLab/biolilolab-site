@@ -7067,7 +7067,7 @@ textarea.form-control-lg {
   background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid rgba(39, 40, 42, 0.2);
-  border-radius: 0.9375rem;
+  /* border-radius: 0.9375rem; */
   outline: 0;
 }
 
@@ -20140,5 +20140,69 @@ a:not([data-aos]):not(.btn):hover {
 
   .d-print-none {
     display: none !important;
+  }
+}
+
+/* CSS para o timeline */
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ddd;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0; /* Ajuste conforme necessário */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff5722;
+  z-index: 3; /* Acima da linha da timeline e dos cards */
+}
+
+
+.card.timeline-content {
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 4;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item {
+      width: 100%;
+      left: 0 !important;
   }
 }
